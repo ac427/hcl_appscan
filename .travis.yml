@@ -4,9 +4,7 @@ python:
 install:
 - pip3 install -r requirements.txt
 script:
-- for file in $(find .  -type f -name '*.py' );do pylint $file || travis_terminate 1 ;done
 - python3 check_tag.py || travis_terminate 1
-- if [[ $TRAVIS_EVENT_TYPE == "push" && $TRAVIS_BRANCH == "master" ]] ; then python3 push_tag.py ; fi
-env:
-  global:
-    - secure: c6ppFFd4OuATZIJiRDsRYWc5szDLZ5jZvAj+R96kr85IhE6CDED/+9pX6CBooiPQH2qCSH+x5HUptvJS9jC9bjFgAS8vk3UkntoOSqqTtgr0qYyLjQR68SruuoL2S33Ylz7m9mjyFfoFR/pf9gEJxxP8NU41RGGBWJOSEJ7BHS6cZB48jjelCZpSeD3/+bHdAETI3UEOyVQRqigGquchamp3ICSZAP2Irlg2f9wNuSzEplwkCBmrMg6D3GwZHm5hxNFreBB4JolBydqtZaoBeNZ5zdnzToGKjsDhknCgAP00WV9let/Ll7wRgMH+t7H7zyMN/QJZzGJtdjXyXL2NXQdNAeGISjGlLXqbl4Cac1TF8vIL/1qLULNaN8nQwo8/LjIwCQTaWHFXhGfvPgQbbwUIs1IlCgOzJbQmQUR/tCIz4NlZMGdvC+l4bvbvMR5zzKHFrELCVYevcgwSo0Mf84cHu9tesu38xeojdQlicfCaAbH3adHhBMxGr3WIAiCRXHFVjWMX8vnwnL6nVFLZuzF+rfxKLVFeOOYhv3bNPx1F0UuLcuZhSTfG/ysN0ARIIea64PjXBUxTxOJO57bvkxaG3r7R5f1QG5xqc26/6WWK+HejG2Bw0H/oYRJL+exdJbFpU4juGxG8DEXgBzaOepzLQUrZLAeqWILdJq1ASQc=
+- for file in $(find .  -type f -name '*.py' );do pylint $file || travis_terminate 1 ;done
+- if [[ $TRAVIS_EVENT_TYPE == "push" && $TRAVIS_BRANCH == "master" ]] ; then python3
+  push_tag.py ; fi
