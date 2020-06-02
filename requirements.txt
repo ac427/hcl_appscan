@@ -1,0 +1,6 @@
+PyGithub
+pylint
+bottle 
+cryptography 
+PyJWT 
+requests

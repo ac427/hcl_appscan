@@ -2,14 +2,10 @@
 """ Python script to listen to github pr payload. """
 import os
 import time
-import urllib.request
-import glob
-from zipfile import ZipFile
-from stat import S_IXUSR
 import shutil
+from bottle import run, post, request
 from download import download_src
 from asoc_scan import scan
-from bottle import run, post, request
 
 
 @post('/pr')
