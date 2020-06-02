@@ -4,7 +4,7 @@ python:
 install:
 - pip3 install -r requirements.txt
 script:
-- python3 check_tag.py || travis_terminate 1
+- python3 travis_scripts/check_tag.py || travis_terminate 1
 - for file in $(find .  -type f -name '*.py' );do pylint $file || travis_terminate 1 ;done
 - if [[ $TRAVIS_EVENT_TYPE == "push" && $TRAVIS_BRANCH == "master" ]] ; then python3
-  push_tag.py ; fi
+  travis_scripts/push_tag.py ; fi

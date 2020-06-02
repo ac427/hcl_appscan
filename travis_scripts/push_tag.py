@@ -16,7 +16,7 @@ REPO = G.get_repo(REPO_NAME)
 SHA = REPO.get_commit('master').sha
 
 
-VERSION_FILE = open("version", "rb")
+VERSION_FILE = open("version", "r")
 VERSION = VERSION_FILE.read().strip('\n').split('=')[1]
 VERSION_FILE.close()
 
