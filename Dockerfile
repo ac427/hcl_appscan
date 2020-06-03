@@ -4,7 +4,7 @@ RUN yum -y install python3-pip python36 curl unzip && \
     unzip saclient.zip && rm -rf saclient.zip && mv SAClientUtil* /usr/local/saclient && \
     yum -y clean all && \
     rm -Rf /var/cache/yum && \
-    pip3 install --no-cache-dir bottle cryptography PyJWT requests 
+    pip3 install --no-cache-dir bottle cryptography PyJWT requests gunicorn 
 
 
 ENV PATH="/usr/local/saclient/bin:${PATH}"
