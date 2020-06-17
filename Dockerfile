@@ -8,6 +8,3 @@ RUN yum -y install python3-pip python36 curl unzip && \
 
 
 ENV PATH="/usr/local/saclient/bin:${PATH}"
-
-# run the application
-ENTRYPOINT ["/usr/local/saclient/bin/appscan.sh"]
